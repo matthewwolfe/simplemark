@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
+  "pre-commit": "node ./src/index.js -s ./site -c ./css/global.css",
   "scripts": {
     "test": "jest --coverage"
   },
@@ -15,6 +16,7 @@
     "showdown": "1.9.0"
   },
   "devDependencies": {
-    "jest": "24.8.0"
+    "jest": "24.8.0",
+    "pre-commit": "^1.2.2"
   }
 }

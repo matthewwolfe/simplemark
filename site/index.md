@@ -1,5 +1,5 @@
 include './styles.css'
 
-# markdown-site
+# Simplemark
 
 - [Documentation](documentation/index.md)
