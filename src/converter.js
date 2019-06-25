@@ -5,6 +5,8 @@ const showdown = require('./showdown');
 function convertToHtml({markdown = '', globalCssPath = ''}) {
   const converter = showdown.create();
 
+  let globalCssHtml = '';
+
   if (globalCssPath.length > 0 && fs.existsSync(globalCssPath)) {
     globalCssHtml = `
       <style>
