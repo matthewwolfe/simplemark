@@ -1,0 +1,20 @@
+{
+  "name": "markdown-site",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "2.20.0",
+    "pretty": "2.0.0",
+    "rimraf": "2.6.3",
+    "showdown": "1.9.0"
+  },
+  "devDependencies": {
+    "jest": "24.8.0"
+  }
+}
