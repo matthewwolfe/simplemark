@@ -3,7 +3,8 @@ const showdown = require('showdown');
 
 function create() {
   let extensionStatuses = {
-    extra: false
+    extra: false,
+    links: false
   };
 
   showdown.extension('extra', {
@@ -18,20 +19,38 @@ function create() {
       const lines = text.split('\n').filter(line => line.length !== 0);
 
       return lines.map(line => {
-        const classes = line.match(/[^{\}]+(?=})/g) || [];
-        const html = converter.makeHtml(line).replace(/{([^}]+)}/g, '');
-        const index = html.indexOf('>');
-
-        let classesHtml = '';
-
-        if (classes.length > 0) {
-          classesHtml = `class=\"${classes.join(' ').trim()}\"`;
+        if (isIncludeLine(line)) {
+          return generateStyleHtml(line);
         }
 
-        return `${html.slice(0, index)} ${classesHtml}${html.slice(index, html.length)}`;
+        return generateHtml(line);
       }).join('\n');
     }
   });
+
+  function generateStyleHtml(string) {
+    const path = string.trim().replace('include', '').replace(/[']/g, '').trim();
+
+    return `<link rel="stylesheet" type="text/css" href="${path}" />`;
+  }
+
+  function generateHtml(string) {
+    const classes = string.match(/[^{\}]+(?=})/g) || [];
+    const html = converter.makeHtml(string).replace(/{([^}]+)}/g, '');
+    const index = html.indexOf('>');
+
+    let classesHtml = '';
+
+    if (classes.length > 0) {
+      classesHtml = `class=\"${classes.join(' ').trim()}\"`;
+    }
+
+    return `${html.slice(0, index)} ${classesHtml}${html.slice(index, html.length)}`;
+  }
+
+  function isIncludeLine(string) {
+    return string.startsWith('include');
+  }
 
   const converter = new showdown.Converter({
     extensions: ['extra']

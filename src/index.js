@@ -6,7 +6,7 @@ const { version: packageVersion } = require('../package.json');
 program
   .version(packageVersion, '-v, --version')
   .option('-s, --source <source>', 'Source directory')
-  .option('-c, --css <source>', 'CSS directory')
+  .option('-c, --css <source>', 'Path to global CSS file')
   .parse(process.argv);
 
 generateDocs({

@@ -6,6 +6,7 @@ const { convertToHtml } = require('./converter');
 
 
 let baseSource = 'site/';
+let globalCssPath = '';
 
 function generateSavePath(source) {
   return `./docs/${source.replace(baseSource, '')}`;
@@ -69,6 +70,7 @@ function generateDocs({css = '', source = './src'}) {
   rimraf.sync('./docs');
   fs.mkdirSync('docs');
 
+  globalCssPath = css;
   baseSource = source.replace('./', '');
 
   // Create all directories with sub-directories and files
@@ -82,7 +84,7 @@ function saveFile(file) {
 
 function saveMarkdownAsHtml(file) {
   const markdown = fs.readFileSync(file, 'utf-8');
-  fs.writeFileSync(generateSavePath(file.replace('.md', '.html')), convertToHtml(markdown), 'utf-8');
+  fs.writeFileSync(generateSavePath(file.replace('.md', '.html')), convertToHtml({markdown, globalCssPath}), 'utf-8');
 }
 
 module.exports = {

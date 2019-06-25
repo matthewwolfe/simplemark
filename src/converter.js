@@ -1,12 +1,24 @@
+const fs = require('fs');
 const pretty = require('pretty');
 const showdown = require('./showdown');
 
-function convertToHtml(markdown) {
+function convertToHtml({markdown = '', globalCssPath = ''}) {
   const converter = showdown.create();
 
-  return pretty(`
+  if (globalCssPath.length > 0 && fs.existsSync(globalCssPath)) {
+    globalCssHtml = `
+      <style>
+        ${fs.readFileSync(globalCssPath, 'utf-8')}
+      </style>
+    `;
+  }
+
+  let html = pretty(`
       <html>
-        <head></head>
+        <head>
+          ${globalCssHtml}
+        </head>
+
         <body>
           ${converter.makeHtml(markdown)}
         </body>
@@ -14,6 +26,14 @@ function convertToHtml(markdown) {
     `,
     {ocd: true}
   );
+
+  html = convertLinks(html);
+
+  return html;
+}
+
+function convertLinks(html) {
+  return html.replace(/.md/g, '.html');
 }
 
 module.exports = {
