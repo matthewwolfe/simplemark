@@ -4,6 +4,4 @@
 
 ###### npm
 
-```
-npm install @matthewwolfe/simplemark
-```
+```npm install @matthewwolfe/simplemark```
