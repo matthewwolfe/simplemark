@@ -5,8 +5,18 @@ exports[`converter converts markdown file to html 1`] = `
   <head>
   </head>
   <body>
-    <h1 class=\\".class-1 .class-2\\">Header 1 </h1>
-    <h2 class=\\".class-3 .class-4\\">Header 2 </h2>
+    <h1 id=\\"header-1\\" class=\\"class-1 class-2\\">Header 1</h1>
+    <h2 class=\\"class-3 class-4\\">Header 2</h2>
+  </body>
+</html>"
+`;
+
+exports[`converter converts markdown link to html link 1`] = `
+"<html>
+  <head>
+  </head>
+  <body>
+    <p><a href=\\"documentation/index.html\\">Documentation</a></p>
   </body>
 </html>"
 `;

@@ -1,10 +1,15 @@
 const fs = require('fs');
 const pretty = require('pretty');
-const showdown = require('./showdown');
+const markdownIt = require('markdown-it')('commonmark');
+const markdownItAttrs = require('markdown-it-attrs');
+const markdownItDiv = require('markdown-it-div');
+
+
+markdownIt
+  .use(markdownItAttrs)
+  .use(markdownItDiv);
 
 function convertToHtml({markdown = '', globalCssPath = ''}) {
-  const converter = showdown.create();
-
   let globalCssHtml = '';
 
   if (globalCssPath.length > 0 && fs.existsSync(globalCssPath)) {
@@ -22,7 +27,7 @@ function convertToHtml({markdown = '', globalCssPath = ''}) {
         </head>
 
         <body>
-          ${converter.makeHtml(markdown)}
+          ${markdownIt.render(markdown)}
         </body>
       </html>
     `,
