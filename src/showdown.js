@@ -7,7 +7,7 @@ function create() {
     links: false
   };
 
-
+  showdown.setFlavor('github');
 
   showdown.extension('extra', {
     type: 'lang',
@@ -58,7 +58,6 @@ function create() {
     extensions: ['extra']
   });
 
-  converter.setFlavor('github');
   converter.setOption('noHeaderId', true);
 
   return converter;
