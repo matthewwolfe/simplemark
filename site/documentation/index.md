@@ -1,9 +1,15 @@
 # Documentation
 
-#### Installation
+## Installation
 
-##### npm
+#### npm
 
 ```
 npm install @matthewwolfe/simplemark
+```
+
+## Usage
+
+```
+simplemark
 ```
