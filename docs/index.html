@@ -9,6 +9,10 @@
         max-width: 1000px;
         width: 75%;
       }
+      body {
+        margin-top: 3em;
+        margin-bottom: 5em;
+      }
       ul {
         list-style-type: none;
         padding: 0;
@@ -19,18 +23,37 @@
       .navigation ul li a {
         color: #222;
         margin-right: 3em;
+      }
+      .navigation ul li a:hover {
         text-decoration: none;
       }
       .navigation ul li {
         display: inline-block;
       }
+      h1,
+      h2 {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+      }
+      pre,
+      code {
+        background-color: #eee;
+        padding: 0.25em;
+        line-height: 1.25em;
+      }
+      pre {
+        padding: 0.5em;
+      }
     </style>
   </head>
   <body>
     <h1>Simplemark</h1>
-    <div class="navigation">
+    <p>Simplemark is a simple CLI tool for using markdown to generate static sites. It includes additional markdown
+      functionality with the ability to add <code>div</code> elements and custom attributes like <code>id</code> and <code>class</code>.</p>
+    <div class="navigation ">
       <ul>
         <li><a href="documentation/index.html">Documentation</a></li>
+        <li><a href="markdown/index.html">Markdown</a></li>
       </ul>
     </div>
   </body>

@@ -28,7 +28,13 @@ module.exports = () => {
     if (program.watch) {
       console.log(colors.green('Starting simplemark watcher'));
 
-      chokidar.watch(path.resolve(program.source), {
+      const paths = [path.resolve(program.source)];
+
+      if (program.css) {
+        paths.push(path.resolve(program.css));
+      }
+
+      chokidar.watch(paths, {
         ignored: /(^|[\/\\])\../,
         ignoreInitial: true
       }).on('all', (event, path) => {

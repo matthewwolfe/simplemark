@@ -47,16 +47,28 @@
     </style>
   </head>
   <body>
-    <h1>Documentation</h1>
-    <h2>Installation</h2>
-    <h4>Local</h4>
-    <p><code>npm install @matthewwolfe/simplemark</code></p>
-    <h4>Global</h4>
-    <p><code>npm install -g @matthewwolfe/simplemark</code></p>
-    <h2>Options</h2>
-    <p><code>-v</code> <code>--version</code> - Currently installed version</p>
-    <p><code>-s</code> <code>--source</code> - Source directory, default is <code>./src</code></p>
-    <p><code>-c</code> <code>--css</code> - Path to global CSS file</p>
-    <p><code>-w</code> <code>--watch</code> - Watch source directory and global CSS file for changes</p>
+    <h1>Markdown</h1>
+    <p>In addition to 100% CommonMark support, Simplemark also provides additional markdown functionality to help
+      customize your HTML.</p>
+    <h2>Divs</h2>
+    <p>Adds a div element. Can include custom attributes.</p>
+    <h4>Markdown</h4>
+    <pre><code>::: { .navigation }
+Example content
+:::
+</code></pre>
+    <h4>Output HTML</h4>
+    <pre><code>&lt;div class=&quot;navigation&quot;&gt;
+  Example content
+&lt;/div&gt;
+</code></pre>
+    <h2>Custom Attributes</h2>
+    <p>Adds custom attributes like <code>id</code>, <code>class</code>, and more.</p>
+    <h4>Markdown</h4>
+    <pre><code># Header 1 { .header-1 }
+</code></pre>
+    <h4>Output HTML</h4>
+    <pre><code>&lt;h1 class=&quot;header-1&quot;&gt;Header 1&lt;/h1&gt;
+</code></pre>
   </body>
 </html>
