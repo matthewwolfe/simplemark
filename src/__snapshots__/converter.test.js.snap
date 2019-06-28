@@ -3,6 +3,7 @@
 exports[`converter converts markdown file to html 1`] = `
 "<html>
   <head>
+    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
   </head>
   <body>
     <h1 id=\\"header-1\\" class=\\"class-1 class-2\\">Header 1</h1>
@@ -14,6 +15,7 @@ exports[`converter converts markdown file to html 1`] = `
 exports[`converter converts markdown link to html link 1`] = `
 "<html>
   <head>
+    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\">
   </head>
   <body>
     <p><a href=\\"documentation/index.html\\">Documentation</a></p>
