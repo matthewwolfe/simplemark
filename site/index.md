@@ -6,4 +6,5 @@ functionality with the ability to add `div` elements and custom attributes like 
 ::: { .navigation }
 - [Documentation](documentation/index.md)
 - [Markdown](markdown/index.md)
+- [Github](https://github.com/matthewwolfe/simplemark)
 :::
