@@ -1,35 +1,27 @@
 <html>
   <head>
     <style>
+      html {
+        background-color: #f5f5f5;
+        margin-top: 2em;
+        margin-bottom: 3em;
+      }
       body {
+        background-color: #fff;
         font-family: sans-serif;
-        margin-top: 3em;
+        height: fit-content;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 5em;
         max-width: 800px;
+        padding: 1.5em;
+        padding-bottom: 2.5em;
+        padding-top: 2.5em;
         width: 90%;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      .navigation {
-        margin-top: 2em;
-      }
-      .navigation ul li a {
-        color: #222;
-        margin-right: 3em;
-      }
-      .navigation ul li a:hover {
-        text-decoration: none;
-      }
-      .navigation ul li {
-        display: inline-block;
+        border-radius: 4px;
+        box-shadow: 0px 4px 6px 0px #ccc;
       }
       h1,
       h2 {
-        margin-top: 1.5em;
         margin-bottom: 1.5em;
       }
       pre,
@@ -38,8 +30,30 @@
         padding: 0.25em;
         line-height: 1.25em;
       }
+      p {
+        line-height: 1.25em;
+      }
       pre {
         padding: 0.5em;
+      }
+      ul {
+        padding-left: 1.5em;
+      }
+      .navigation {
+        margin-top: 2em;
+      }
+      .navigation ul {
+        list-style-type: none;
+      }
+      .navigation ul li {
+        display: inline-block;
+      }
+      .navigation ul li a {
+        color: #222;
+        margin-right: 3em;
+      }
+      .navigation ul li a:hover {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -47,6 +61,8 @@
     <h1>Simplemark</h1>
     <p>Simplemark is a simple CLI tool for using markdown to generate static sites. It includes additional markdown
       functionality with the ability to add <code>div</code> elements and custom attributes like <code>id</code> and <code>class</code>.</p>
+    <p>Simplemark works by mirroring a directory of Markdown files into static HTML files, and converting all links. It will
+      also add CSS to all your Markdown files by specifying the path to a global CSS file.</p>
     <div class="navigation ">
       <ul>
         <li><a href="documentation/index.html">Documentation</a></li>

@@ -1,35 +1,27 @@
 <html>
   <head>
     <style>
+      html {
+        background-color: #f5f5f5;
+        margin-top: 2em;
+        margin-bottom: 3em;
+      }
       body {
+        background-color: #fff;
         font-family: sans-serif;
-        margin-top: 3em;
+        height: fit-content;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 5em;
         max-width: 800px;
+        padding: 1.5em;
+        padding-bottom: 2.5em;
+        padding-top: 2.5em;
         width: 90%;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      .navigation {
-        margin-top: 2em;
-      }
-      .navigation ul li a {
-        color: #222;
-        margin-right: 3em;
-      }
-      .navigation ul li a:hover {
-        text-decoration: none;
-      }
-      .navigation ul li {
-        display: inline-block;
+        border-radius: 4px;
+        box-shadow: 0px 4px 6px 0px #ccc;
       }
       h1,
       h2 {
-        margin-top: 1.5em;
         margin-bottom: 1.5em;
       }
       pre,
@@ -38,8 +30,30 @@
         padding: 0.25em;
         line-height: 1.25em;
       }
+      p {
+        line-height: 1.25em;
+      }
       pre {
         padding: 0.5em;
+      }
+      ul {
+        padding-left: 1.5em;
+      }
+      .navigation {
+        margin-top: 2em;
+      }
+      .navigation ul {
+        list-style-type: none;
+      }
+      .navigation ul li {
+        display: inline-block;
+      }
+      .navigation ul li a {
+        color: #222;
+        margin-right: 3em;
+      }
+      .navigation ul li a:hover {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -55,5 +69,28 @@
     <p><code>-s</code> <code>--source</code> - Source directory, default is <code>./src</code></p>
     <p><code>-c</code> <code>--css</code> - Path to global CSS file</p>
     <p><code>-w</code> <code>--watch</code> - Watch source directory and global CSS file for changes</p>
+    <h2>Getting Started</h2>
+    <p>Once you have downloaded the package, the following steps will get you started quickly:</p>
+    <ul>
+      <li>Create a source directory. The default directory is <code>src</code></li>
+      <li>Create a global CSS file</li>
+      <li>Create the <code>docs</code> directory (Optional). This is the output directory. If it doesn't exist, simplemark will create it</li>
+    </ul>
+    <h4>Example Structure</h4>
+    <pre><code>|- src
+  |- index.html
+  |- example-directory
+    |- index.html
+    |- another-file.html
+|- css
+  |- global.css
+|- package.json
+|- package.lock
+</code></pre>
+    <p>Then you can get started with:</p>
+    <pre><code>simplemark -c ./css/global.css -w
+</code></pre>
+    <p>With the <code>-w</code> option, simplemark will automatically monitor your files for changes, and transform all your
+      files automatically.</p>
   </body>
 </html>
