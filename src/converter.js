@@ -1,13 +1,19 @@
 const fs = require('fs');
 const pretty = require('pretty');
-const markdownIt = require('markdown-it')('commonmark');
+const markdownIt = require('markdown-it')('commonmark', {
+  replaceLink: function (link, env) {
+    return link.replace(/.md/g, '.html');
+  }
+});
 const markdownItAttrs = require('markdown-it-attrs');
 const markdownItDiv = require('markdown-it-div');
+const markdownItReplaceLink = require('markdown-it-replace-link');
 
 
 markdownIt
   .use(markdownItAttrs)
-  .use(markdownItDiv);
+  .use(markdownItDiv)
+  .use(markdownItReplaceLink);
 
 function convertToHtml({markdown = '', globalCssPath = ''}) {
   let globalCssHtml = '';
@@ -35,13 +41,7 @@ function convertToHtml({markdown = '', globalCssPath = ''}) {
     {ocd: true}
   );
 
-  html = convertLinks(html);
-
   return html;
-}
-
-function convertLinks(html) {
-  return html.replace(/.md/g, '.html');
 }
 
 module.exports = {
