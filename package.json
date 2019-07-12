@@ -24,7 +24,7 @@
     "markdown-it": "8.4.2",
     "markdown-it-attrs": "2.4.1",
     "markdown-it-div": "1.1.0",
-    "markdown-it-replace-link": "^1.0.1",
+    "markdown-it-replace-link": "1.0.1",
     "pretty": "2.0.0",
     "rimraf": "2.6.3"
   },
